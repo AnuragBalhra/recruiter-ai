@@ -9,6 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@11labs/react": "^0.0.1",
+    "@deepgram/sdk": "^3.5.1",
+    "@openai/realtime-api-beta": "github:openai/openai-realtime-api-beta",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "axios": "^1.7.5",
+    "simli-client": "^1.2.6",
     "@100mslive/roomkit-react": "^0.3.12",
     "@100mslive/server-sdk": "^0.3.0",
     "@aws-sdk/client-appconfigdata": "^3.743.0",
