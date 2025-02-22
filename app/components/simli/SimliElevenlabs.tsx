@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import IconSparkleLoader from "@/public/assets/media/IconSparkleLoader";
 import { send } from "process";
 import { getElevenLabsSignedUrl } from "@/app/server/elevenlabs_actions";
+import UserVideo from "./UserVideo";
 
 interface SimliElevenlabsProps {
   simli_faceid: string;
@@ -169,11 +170,11 @@ const SimliElevenlabs: React.FC<SimliElevenlabsProps> = ({
 
   return (
     <>
-      <div
-        className={`transition-all duration-300 ${
+      <div className={`grid grid-cols-2 transition-all duration-300 gap-5 ${
           showDottedFace ? "h-0 overflow-hidden" : "h-auto"
         }`}
       >
+        <UserVideo />
         <VideoBox video={videoRef} audio={audioRef} />
       </div>
       <div className="flex flex-col items-center">
@@ -182,7 +183,7 @@ const SimliElevenlabs: React.FC<SimliElevenlabsProps> = ({
             onClick={handleStart}
             disabled={isLoading}
             className={cn(
-              "w-full h-[52px] mt-4 disabled:bg-[#343434] disabled:text-white disabled:hover:rounded-[100px] bg-simliblue text-white py-3 px-6 rounded-sm transition-all duration-300 hover:text-black hover:bg-white hover:rounded-xl",
+              "w-full h-[52px] mt-4 disabled:bg-[#343434] disabled:text-white disabled:hover:rounded-[100px] bg-simliblue text-gray-800 py-3 px-6 rounded-sm transition-all duration-300 hover:text-white hover:bg-gray-800 hover:rounded-xl",
               "flex justify-center items-center"
             )}
           >
@@ -200,10 +201,10 @@ const SimliElevenlabs: React.FC<SimliElevenlabsProps> = ({
               <button
                 onClick={handleStop}
                 className={cn(
-                  "mt-4 group text-white flex-grow bg-red hover:rounded-sm hover:bg-white h-[52px] px-6 rounded-[100px] transition-all duration-300"
+                  "mt-4 group text-gray-800 flex-grow hover:rounded-sm hover:bg-gray-800 h-[52px] px-6 rounded-[100px] transition-all duration-300"
                 )}
               >
-                <span className="font-abc-repro-mono group-hover:text-black font-bold w-[164px] transition-all duration-300">
+                <span className="font-abc-repro-mono group-hover:text-white font-bold w-[164px] transition-all duration-300">
                   Stop Interview
                 </span>
               </button>
