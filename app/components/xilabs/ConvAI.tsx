@@ -29,7 +29,7 @@ export function ConvAI() {
             alert("No permission")
             return;
         }
-        const response = await getElevenLabsSignedUrl("4DEbuqFe3a3yimXaGH7Z")
+        const response = await getElevenLabsSignedUrl("T86id8RLLsalc7Ao3P0d")
         const conversation = await Conversation.startSession({
             signedUrl: response?.signed_url ?? "",
             onConnect: () => {
@@ -64,12 +64,19 @@ export function ConvAI() {
             <Card className={'rounded-3xl'}>
                 <CardContent>
                     <div className={'flex flex-row text-center items-center '}>
-                        <div className={cn('orb my-4 mx-4',
+                        <div className={cn('orb my-b-0 mt-5 mx-4',
                             isSpeaking ? 'animate-orb' : (conversation && 'animate-orb-slow'),
                             isConnected ? 'orb-active' : 'orb-inactive')}
                         ></div>
 
-                        <div className="flex flex-col items-center">
+                        <div className="flex flex-col items-center mt-4">
+                            <div className="text-xs">
+                                {isConnected ? (
+                                    isSpeaking ? `Agent is speaking` : 'Agent is listening'
+                                ) : (
+                                    'Disconnected'
+                                )}
+                            </div>
                             {!!conversation ?
                                 <Button
                                     variant={'outline'}
@@ -89,13 +96,6 @@ export function ConvAI() {
                                 >
                                     Start conversation
                                 </Button>}
-                                <div className="text-xs">
-                                    {isConnected ? (
-                                        isSpeaking ? `Agent is speaking` : 'Agent is listening'
-                                    ) : (
-                                        'Disconnected'
-                                    )}
-                                </div>
                             </div>
                     </div>
                 </CardContent>
