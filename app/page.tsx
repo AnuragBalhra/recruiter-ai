@@ -1,15 +1,9 @@
-import { Hero } from "@/components/Hero";
-import { Features } from "@/components/Features";
-import { Stats } from "@/components/Stats";
+import React from 'react';
 
-const Index = () => {
-  return (
-    <div className="min-h-screen bg-white">
-      <Hero />
-      <Features />
-      <Stats />
-    </div>
-  );
-};
+const Home = () => {
+    return (
+        <>Welcome to Recruiter AI</>
+    );
+}
 
-export default Index;
+export default Home;
