@@ -1,11 +1,11 @@
 import React, { useCallback, useRef, useState } from "react";
-import { useConversation } from "./simli-elevenlabs/elevenlabs-react";
+import { useConversation } from "./elevenlabs/elevenlabs-react";
 import { SimliClient } from "simli-client";
-import VideoBox from "./Components/VideoBox";
-import cn from "./utils/TailwindMergeAndClsx";
-import IconSparkleLoader from "@/media/IconSparkleLoader";
+import VideoBox from "@/app/components/simli/VideoBox";
+import { cn } from "@/lib/utils";
+import IconSparkleLoader from "@/public/assets/media/IconSparkleLoader";
 import { send } from "process";
-import { getElevenLabsSignedUrl } from "./actions/actions";
+import { getElevenLabsSignedUrl } from "@/app/server/elevenlabs_actions";
 
 interface SimliElevenlabsProps {
   simli_faceid: string;
