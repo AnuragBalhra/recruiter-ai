@@ -1,3 +1,4 @@
+"use client";
 import InternalHeaderBar from '@/app/(authenticated)/internal-header-bar';
 import { useRouter } from "next/navigation";
 import { AnimatePresence } from 'framer-motion';

@@ -1,5 +1,5 @@
-
-export const Stats = () => {
+'use client';
+const Stats = () => {
   const stats = [
     { number: "70%", label: "Time Saved" },
     { number: "99%", label: "Accuracy Rate" },
@@ -21,3 +21,5 @@ export const Stats = () => {
     </section>
   );
 };
+
+export default Stats;

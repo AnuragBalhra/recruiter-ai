@@ -1,7 +1,8 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 
-export const Hero = () => {
+const Hero = () => {
   return (
     <div className="min-h-[80vh] flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
@@ -31,3 +32,4 @@ export const Hero = () => {
   );
 };
 
+export default Hero;

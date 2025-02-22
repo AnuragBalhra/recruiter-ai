@@ -1,6 +1,7 @@
-import { Hero } from "@/components/Hero";
-import { Features } from "@/components/Features";
-import { Stats } from "@/components/Stats";
+"use client";
+import Hero from '@/app/components/Hero';
+import Features from '@/app/components/Features';
+import Stats from '@/app/components/Stats';
 
 const Index = () => {
   return (

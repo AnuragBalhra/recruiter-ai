@@ -1,8 +1,8 @@
-
+'use client';
 import { Clock, Award, BarChart, Globe } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
-export const Features = () => {
+const Features = () => {
   const features = [
     {
       icon: Clock,
@@ -49,3 +49,4 @@ export const Features = () => {
   );
 };
 
+export default Features;
