@@ -182,7 +182,7 @@ const SimliElevenlabs: React.FC<SimliElevenlabsProps> = ({
             onClick={handleStart}
             disabled={isLoading}
             className={cn(
-              "w-full h-[52px] mt-4 disabled:bg-[#343434] disabled:text-white disabled:hover:rounded-[100px] bg-simliblue text-white py-3 px-6 rounded-[100px] transition-all duration-300 hover:text-black hover:bg-white hover:rounded-sm",
+              "w-full h-[52px] mt-4 disabled:bg-[#343434] disabled:text-white disabled:hover:rounded-[100px] bg-simliblue text-white py-3 px-6 rounded-sm transition-all duration-300 hover:text-black hover:bg-white hover:rounded-xl",
               "flex justify-center items-center"
             )}
           >
@@ -190,7 +190,7 @@ const SimliElevenlabs: React.FC<SimliElevenlabsProps> = ({
               <IconSparkleLoader className="h-[20px] animate-loader" />
             ) : (
               <span className="font-abc-repro-mono font-bold w-[164px]">
-                Test Interaction
+                Start Interview
               </span>
             )}
           </button>
@@ -204,7 +204,7 @@ const SimliElevenlabs: React.FC<SimliElevenlabsProps> = ({
                 )}
               >
                 <span className="font-abc-repro-mono group-hover:text-black font-bold w-[164px] transition-all duration-300">
-                  Stop Interaction
+                  Stop Interview
                 </span>
               </button>
             </div>
