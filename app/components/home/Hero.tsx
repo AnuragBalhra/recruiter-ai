@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 const Hero = () => {
     return (
@@ -18,13 +19,17 @@ const Hero = () => {
                         Streamline your hiring process with our automated tech interviewer. Get consistent, unbiased evaluations based on predefined rubrics.
                     </p>
                     <div className="mt-8 flex items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-                        <Button size="lg" className="rounded-full">
-                            Get Started
-                            <ChevronRight className="ml-2 h-4 w-4" />
-                        </Button>
-                        <Button variant="outline" size="lg" className="rounded-full">
-                            Learn More
-                        </Button>
+                        <Link href="/dashboard">
+                            <Button size="lg" className="rounded-full">
+                                Get Started
+                                <ChevronRight className="ml-2 h-4 w-4" />
+                            </Button>
+                        </Link>
+                        <Link href="/faqs">
+                            <Button variant="outline" size="lg" className="rounded-full">
+                                Learn More
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </div>
