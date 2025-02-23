@@ -15,10 +15,9 @@ const avatar: avatarSettings = {
   simli_faceid: "86ce4210-8301-4e04-a2e3-a2aba6fff2bf",
 };
 
-export default async function InterviewPage({ params: { interviewId } }:
+export default function InterviewPage({ params: { interviewId } }:
   { params: { interviewId: string }}) {
   const [showDottedFace, setShowDottedFace] = useState(true);
-
   const onStart = () => {
     console.log("Setting setshowDottedface to false...");
     setShowDottedFace(false);
@@ -40,7 +39,8 @@ export default async function InterviewPage({ params: { interviewId } }:
             onStart={onStart}
             onClose={onClose}
             showDottedFace={showDottedFace}
-            interviewId={interviewId}
+            username={"Anurag"}
+            interviewId={"Test"}
           />
         </div>
       </div>
