@@ -60,3 +60,12 @@ export const getJobDetailsFromWorkable = async (account: string, apiKey: string,
 
   return await fetchWorkableData(`${endpoints.job}${jobCode}`, apiKey);
 };
+
+export const getJobApplicationsFromWorkable = async (account: string, apiKey: string, jobCode: string): Promise<any> => {
+  if (!account || !apiKey) {
+    throw new Error("Invalid credentials for Workable integration!");
+  }
+  const endpoints = createEndpoints(account);
+
+  return await fetchWorkableData(`${endpoints.job}${jobCode}/candidates`, apiKey);
+};

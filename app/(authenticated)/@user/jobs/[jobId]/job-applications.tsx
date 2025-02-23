@@ -15,17 +15,17 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { consoleLog } from "@/utils/logging-utils";
 import toast from "react-hot-toast";
 import { Plus } from 'lucide-react';
-import { getJobsByIntegrationType } from '@/app/server/integration_actions';
+import { getJobApplicationsByIntegrationType } from '@/app/server/integration_actions';
 import { format, render, cancel, register } from 'timeago.js';
 import { Skeleton } from '@mui/material';
 
-export default function UserJobs() {
+export default function JobApplications({jobId}: {jobId: string}) {
   const queryClient = useQueryClient()
   const { isPending, data  } = useQuery({
-    queryKey: ['workable_jobs'],
-    queryFn: () => getJobsByIntegrationType({ integrationType: 'workable' }),
+    queryKey: ['workable_job_applications'],
+    queryFn: () => getJobApplicationsByIntegrationType({ integrationType: 'workable', jobId }),
   });
-  const jobs = data?.jobs ?? [];
+  const applications = data?.candidates ?? [];
   const getWorkableIntegrationSkeleton = () => {
     return <div className="flex flex-col gap-5 justify-center items-center p-20">
       <div className="flex flex-col md:flex-row gap-10 md:gap-2 justify-center items-center ml-8">
@@ -57,25 +57,25 @@ export default function UserJobs() {
     return getWorkableIntegrationSkeleton();
   }
 
-  console.log("found my jobs: ", data);
+  console.log("found my applications: ", data);
   return (    
     <div>
       <div className="my-5 text-2xl font-bold text-gray-800 dark:text-white">
-        My Jobs
+        Job Applications
       </div>
       <div className="grid md:grid-cols-3 gap-5">
-        {jobs?.map((job: any, index: number) => {
+        {applications?.map((application: any, index: number) => {
           return (
             <Card key={index}>
               <CardHeader>
-                <CardTitle>{job?.title}</CardTitle>
-                <CardDescription className="text-xs">{job?.location?.location_str}</CardDescription>
+                <CardTitle>{application?.name}</CardTitle>
+                <CardDescription className="text-xs">{application?.headline}</CardDescription>
               </CardHeader>
               <CardContent className="flex flex-1 flex-col justify-between gap-5">
-                <p className="text-xs">Created {format(job?.created_at, 'en-US')}</p>
-                <Link href={"/jobs/" + job?.shortcode}>
+                <p className="text-xs">Applied {format(application?.created_at, 'en-US')}</p>
+                <Link href={"/applications/" + application?.shortcode}>
                   <Button>
-                    View Job
+                    View Feedback
                   </Button>
                 </Link>
               </CardContent>

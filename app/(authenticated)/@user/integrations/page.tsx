@@ -11,9 +11,9 @@ export default async function IntegrationsPage() {
     <div className="flex flex-1 flex-col h-screen w-full items-start gap-2 sm:pl-4">
       <InternalHeaderBar title={"Account Integrations"} />
 
-      <div className="col-span-9 sm:gap-4 p-4 sm:px-0 sm:py-4">
+      <main className="flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col gap-4 p-4">
           <AccountIntegrationSection />
-      </div>
+      </main>
     </div>
     );
   }

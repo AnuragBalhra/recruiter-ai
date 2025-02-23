@@ -10,7 +10,7 @@ import { useAuth } from "@clerk/nextjs"
 export default function AccountIntegrationSection() {
 
   return (
-    <div className="grid grid-cols-12">
+    <div className="flex-flex-row">
       <WorkableIntegrationCard />
     </div>
     );

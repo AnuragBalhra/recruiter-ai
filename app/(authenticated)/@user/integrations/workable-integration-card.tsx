@@ -50,7 +50,7 @@ export default function WorkableIntegrationCard({ }) {
   }
 
   if (isError) {
-    return error?.message && <Alert severity="info">{error?.message}</Alert>
+    return error && <Alert severity="info">{error}</Alert>
   }
 
   return (
@@ -63,7 +63,7 @@ export default function WorkableIntegrationCard({ }) {
           mountOnEnter
           unmountOnExit
           >
-          <div className="flex flex-col h-full bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] justify-between">
+          <div className="flex flex-col h-full bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] justify-between max-w-xs">
             <div className="p-4 md:p-5">
               <h3 className="text-lg font-bold text-gray-800 dark:text-white">
                   Workable
