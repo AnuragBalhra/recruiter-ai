@@ -53,7 +53,7 @@ const data = {
   options: [
     {
       name: "Demo Video",
-      url: "https://www.youtube.com/",
+      url: "https://youtu.be/oqsDh-B215I",
       id: "onborda-demo-video",
       icon: Youtube,
     },
