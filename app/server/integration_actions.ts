@@ -3,6 +3,7 @@
 import dbConnect from "@/lib/db-connect";
 import { auth, clerkClient } from "@clerk/nextjs/server";
 import AccountIntegrations from "@/app/models/accounts/account_integrations";
+import Interview from "@/app/models/interviews/interview";
 import { getJobsFromWorkable, getJobDetailsFromWorkable, getJobApplicationsFromWorkable } from "@/app/server/workable_actions";
 
 export const getIntegrationByType = async (integrationType: string) => {
@@ -164,5 +165,28 @@ export const getJobApplicationsByIntegrationType = async ({ integrationType, job
   } catch (err) {
     console.log("error getting user details: ", err);
     return { error: true, message: "There was an error getting user details." };
+  }
+};
+
+export const getJobApplicationFeedback = async ({ applicationId, jobId }: { applicationId: string, jobId: string }) => {
+  const { userId, orgId } = auth();
+  console.log("getting job application feedback for user: ", userId, orgId);
+
+  if (!userId && !orgId) {
+    return { error: true, message: "Unable to verify credentials." };
+  }
+
+  await dbConnect();
+
+  try {
+    const interview = await Interview.findOne({ 
+      job_id: jobId, 
+      candidate_id: applicationId, 
+      status: "completed"
+    });
+    return JSON.parse(JSON.stringify(interview));
+  } catch (err) {
+    console.log("error getting application feedback: ", err);
+    return { error: true, message: "There was an error application feedback." };
   }
 };

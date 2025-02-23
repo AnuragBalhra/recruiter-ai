@@ -73,9 +73,9 @@ export default function UserJobs() {
               </CardHeader>
               <CardContent className="flex flex-1 flex-col justify-between gap-5">
                 <p className="text-xs">Created {format(job?.created_at, 'en-US')}</p>
-                <Link href={"/jobs/" + job?.shortcode}>
-                  <Button>
-                    View Job
+                <Link href={`/jobs/${job?.shortcode}/applications`}>
+                  <Button variant="outline">
+                    View applications
                   </Button>
                 </Link>
               </CardContent>
