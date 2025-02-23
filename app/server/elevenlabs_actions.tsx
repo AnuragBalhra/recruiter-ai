@@ -97,7 +97,7 @@ interface ElevenLabsSignedUrlResponse {
  * @param agentId 
  * @returns Object containing the signed URL or error message
  */
-export async function getElevenLabsSignedUrl(agentId: string): Promise<{ signed_url: string } | { error: string }> {
+export async function getElevenLabsSignedUrl(agentId: string): Promise<{ signed_url: string } | { signed_url: string, error: string }> {
   try {
     if (!process.env.ELEVENLABS_API_KEY) {
       throw new Error('ElevenLabs API key is not configured');
@@ -123,6 +123,6 @@ export async function getElevenLabsSignedUrl(agentId: string): Promise<{ signed_
 
   } catch (error) {
     console.error('Error getting ElevenLabs signed URL:', error);
-    return { error: error instanceof Error ? error.message : 'Unknown error occurred' };
+    return { signed_url: '', error: error instanceof Error ? error.message : 'Unknown error occurred' };
   }
 }

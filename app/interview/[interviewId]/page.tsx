@@ -15,9 +15,9 @@ const avatar: avatarSettings = {
   simli_faceid: "86ce4210-8301-4e04-a2e3-a2aba6fff2bf",
 };
 
-const Demo: React.FC = () => {
+export default function InterviewPage({ params: { interviewId } }:
+  { params: { interviewId: string }}) {
   const [showDottedFace, setShowDottedFace] = useState(true);
-
   const onStart = () => {
     console.log("Setting setshowDottedface to false...");
     setShowDottedFace(false);
@@ -29,7 +29,7 @@ const Demo: React.FC = () => {
   };
 
   return (
-    <div className="bg-black min-h-screen flex flex-1 flex-col items-center font-abc-repro font-normal text-sm text-white p-8">
+    <div className="min-h-screen flex flex-1 flex-col items-center font-abc-repro font-normal text-sm text-white p-8">
       <div className="flex flex-col items-center gap-6 bg-effect15White p-6 pb-[40px] rounded-xl w-full">
         <div>
           {showDottedFace && <DottedFace />}
@@ -39,6 +39,8 @@ const Demo: React.FC = () => {
             onStart={onStart}
             onClose={onClose}
             showDottedFace={showDottedFace}
+            username={"Anurag"}
+            interviewId={"Test"}
           />
         </div>
       </div>
@@ -46,4 +48,3 @@ const Demo: React.FC = () => {
   );
 };
 
-export default Demo;

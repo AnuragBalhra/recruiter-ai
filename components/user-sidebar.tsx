@@ -3,6 +3,7 @@
 import * as React from "react"
 import {
   Zap,
+  Blocks,
   Home,
   ShieldQuestion,
 } from "lucide-react"
@@ -40,6 +41,12 @@ const data = {
       url: "/dashboard",
       id: "onborda-dashboard",
       icon: Home,
+    },
+    {
+      title: "Integrations",
+      url: "/integrations",
+      id: "onborda-integrations",
+      icon: Blocks,
     }
   ],
   options: [
