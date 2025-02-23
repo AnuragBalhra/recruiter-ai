@@ -7,8 +7,8 @@ export async function POST(request: Request, { params }: any) {
     const interviewId = params?.interviewId;
     const evaluation = data?.evaluation;
     await dbConnect();
-    
-    const response = await Interview.updateOne({ _id: interviewId }, {
+
+    const response = await Interview.updateOne({ status: { $ne: "completed" } }, {
         $set: {
             evaluation,
             status: "completed",
