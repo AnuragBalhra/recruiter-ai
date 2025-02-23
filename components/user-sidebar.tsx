@@ -5,7 +5,8 @@ import {
   Zap,
   Blocks,
   Home,
-  ShieldQuestion,
+  Youtube,
+  Github,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -51,10 +52,16 @@ const data = {
   ],
   options: [
     {
-      name: "Help",
-      url: "/faqs",
-      id: "onborda-help",
-      icon: ShieldQuestion,
+      name: "Demo Video",
+      url: "https://www.youtube.com/",
+      id: "onborda-demo-video",
+      icon: Youtube,
+    },
+    {
+      name: "Github Repo",
+      url: "https://github.com/AnuragBalhra/recruiter-ai",
+      id: "onborda-github-repo",
+      icon: Github,
     },
   ],
 }

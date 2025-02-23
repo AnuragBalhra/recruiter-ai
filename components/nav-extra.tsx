@@ -66,36 +66,6 @@ export function NavExtra({
             </SidebarMenuItem>
           </Collapsible>
         ))}
-        <SidebarMenuItem>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <SidebarMenuButton className="text-sidebar-foreground/70">
-                <MoreHorizontal />
-                <span>More</span>
-              </SidebarMenuButton>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent
-              className="w-48 rounded-lg"
-              side={isMobile ? "bottom" : "right"}
-              align={isMobile ? "end" : "start"}
-            >
-              <Link href="https://www.youtube.com/">
-                <DropdownMenuItem className="cursor-pointer">
-                  <Youtube className="text-muted-foreground mr-2" />
-                  <span>Demo Video</span>
-                </DropdownMenuItem>
-              </Link>
-              <Link href="https://github.com/AnuragBalhra/recruiter-ai">
-                <DropdownMenuItem className="cursor-pointer">
-                  <Github className="text-muted-foreground mr-2" />
-                  <span>Github Repo</span>
-                </DropdownMenuItem>
-              </Link>
-              <DropdownMenuSeparator />
-            </DropdownMenuContent>
-          </DropdownMenu>
-          
-        </SidebarMenuItem>
       </SidebarMenu>
     </SidebarGroup>
   )
