@@ -5,7 +5,7 @@ import Stats from '@/app/components/home/Stats';
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-white justify-center w-full">
       <Hero />
       <Features />
       <Stats />
