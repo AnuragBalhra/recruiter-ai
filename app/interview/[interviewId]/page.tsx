@@ -15,7 +15,8 @@ const avatar: avatarSettings = {
   simli_faceid: "86ce4210-8301-4e04-a2e3-a2aba6fff2bf",
 };
 
-const Demo: React.FC = () => {
+export default async function InterviewPage({ params: { interviewId } }:
+  { params: { interviewId: string }}) {
   const [showDottedFace, setShowDottedFace] = useState(true);
 
   const onStart = () => {
@@ -39,6 +40,7 @@ const Demo: React.FC = () => {
             onStart={onStart}
             onClose={onClose}
             showDottedFace={showDottedFace}
+            interviewId={interviewId}
           />
         </div>
       </div>
@@ -46,4 +48,3 @@ const Demo: React.FC = () => {
   );
 };
 
-export default Demo;

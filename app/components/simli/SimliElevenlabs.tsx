@@ -14,6 +14,7 @@ interface SimliElevenlabsProps {
   onStart: () => void;
   onClose: () => void;
   showDottedFace: boolean;
+  interviewId: string;
 }
 
 const simliClient = new SimliClient();
@@ -24,6 +25,7 @@ const SimliElevenlabs: React.FC<SimliElevenlabsProps> = ({
   onStart,
   onClose,
   showDottedFace,
+  interviewId,
 }) => {
   // State management
   const [isLoading, setIsLoading] = useState(false);
@@ -37,6 +39,7 @@ const SimliElevenlabs: React.FC<SimliElevenlabsProps> = ({
 
   // Initialize ElevenLabs conversation hook
   const conversation = useConversation({
+    interviewId,
     onConnect: () => {
       console.log("ElevenLabs conversation connected");
       setIsAvatarVisible(true);

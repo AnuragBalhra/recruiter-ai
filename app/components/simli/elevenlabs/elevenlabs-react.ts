@@ -12,6 +12,7 @@ interface ConversationConfig {
     onAudioData?: (audioData: Uint8Array) => void; // Simplified handler
     agentId?: string;
     signedUrl?: string;
+    interviewId?: string;
     [key: string]: any;
 }
 
