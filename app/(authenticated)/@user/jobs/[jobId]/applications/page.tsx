@@ -5,7 +5,7 @@ import { notFound, redirect } from 'next/navigation';
 import { getJobsDetailsFromATS } from '@/app/server/integration_actions';
 import JobApplications from "./job-applications";
 
-export default async function JobDetailsPage({ params: { jobId } }:
+export default async function JobApplicationsPage({ params: { jobId } }:
   { params: { jobId: string }}) {
   
   console.log("got job Id: ", jobId);

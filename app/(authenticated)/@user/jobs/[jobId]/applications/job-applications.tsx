@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import DashboardBanner from "@/app/components/dashboard-banner"
 import { getMyAgents, addAgent } from '@/app/server/user_actions';
 import {
@@ -18,9 +19,13 @@ import { Plus } from 'lucide-react';
 import { getJobApplicationsByIntegrationType } from '@/app/server/integration_actions';
 import { format, render, cancel, register } from 'timeago.js';
 import { Skeleton } from '@mui/material';
+import ApplicationFeedbackModal from "./application-feedback-modal";
 
 export default function JobApplications({jobId}: {jobId: string}) {
   const queryClient = useQueryClient()
+  const [application, setApplication] = useState();
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
+
   const { isPending, data  } = useQuery({
     queryKey: ['workable_job_applications'],
     queryFn: () => getJobApplicationsByIntegrationType({ integrationType: 'workable', jobId }),
@@ -73,15 +78,17 @@ export default function JobApplications({jobId}: {jobId: string}) {
               </CardHeader>
               <CardContent className="flex flex-1 flex-col justify-between gap-5">
                 <p className="text-xs">Applied {format(application?.created_at, 'en-US')}</p>
-                <Link href={"/applications/" + application?.shortcode}>
-                  <Button>
-                    View Feedback
-                  </Button>
-                </Link>
+                <Button variant="outline" onClick={() => {
+                  setApplication(application?.id)
+                  setFeedbackOpen(true);
+                }}>
+                  View Feedback
+                </Button>
               </CardContent>
             </Card>
           );
         })}
+        {feedbackOpen && <ApplicationFeedbackModal applicationId={application} jobId={jobId} open={feedbackOpen} onClose={() => setFeedbackOpen(false)} />}
       </div>
     </div>
   )

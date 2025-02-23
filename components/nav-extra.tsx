@@ -6,7 +6,7 @@ import {
   MoreHorizontal,
   Trash2,
   Youtube,
-  Rss,
+  Github,
   Headset,
   type LucideIcon,
 } from "lucide-react"
@@ -63,72 +63,9 @@ export function NavExtra({
                   <span>{item.name}</span>
                 </a>
               </SidebarMenuButton>
-              {/* <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <SidebarMenuAction showOnHover>
-                    <MoreHorizontal />
-                    <span className="sr-only">More</span>
-                  </SidebarMenuAction>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent
-                  className="w-48 rounded-lg"
-                  side={isMobile ? "bottom" : "right"}
-                  align={isMobile ? "end" : "start"}
-                >
-                  <DropdownMenuItem>
-                    <Folder className="text-muted-foreground" />
-                    <span>View Project</span>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <Forward className="text-muted-foreground" />
-                    <span>Share Project</span>
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>
-                    <Trash2 className="text-muted-foreground" />
-                    <span>Delete Project</span>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu> */}
             </SidebarMenuItem>
           </Collapsible>
         ))}
-        <SidebarMenuItem>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <SidebarMenuButton className="text-sidebar-foreground/70">
-                <MoreHorizontal />
-                <span>More</span>
-              </SidebarMenuButton>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent
-              className="w-48 rounded-lg"
-              side={isMobile ? "bottom" : "right"}
-              align={isMobile ? "end" : "start"}
-            >
-              <Link href="https://www.youtube.com/@smartintervu">
-                <DropdownMenuItem className="cursor-pointer">
-                  <Youtube className="text-muted-foreground mr-2" />
-                  <span>Youtube Channel</span>
-                </DropdownMenuItem>
-              </Link>
-              <Link href="https://blog.smartutr.com/">
-                <DropdownMenuItem className="cursor-pointer">
-                  <Rss className="text-muted-foreground mr-2" />
-                  <span>Read Our Blog</span>
-                </DropdownMenuItem>
-              </Link>
-              <DropdownMenuSeparator />
-              <Link href="/contact">
-                <DropdownMenuItem className="cursor-pointer">
-                  <Headset className="text-muted-foreground mr-2" />
-                  <span>Contact Us</span>
-                </DropdownMenuItem>
-              </Link>
-            </DropdownMenuContent>
-          </DropdownMenu>
-          
-        </SidebarMenuItem>
       </SidebarMenu>
     </SidebarGroup>
   )
