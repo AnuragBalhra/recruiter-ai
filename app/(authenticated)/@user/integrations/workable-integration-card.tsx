@@ -50,7 +50,7 @@ export default function WorkableIntegrationCard({ }) {
   }
 
   if (isError) {
-    return error && <Alert severity="info">{error}</Alert>
+    return error && <Alert severity="info">{error?.message}</Alert>
   }
 
   return (
